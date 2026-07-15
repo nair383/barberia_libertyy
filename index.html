@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liberty Barber Shop - Moda & Estilo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Fondo de partículas -->
+    <div class="luxury-particles" id="particles-container"></div>
+
+    <!-- 1. NUEVA BARRA DE NAVEGACIÓN COMPACTA (Sticky) -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="logo1.jpeg" alt="Liberty Mini" class="nav-logo-img">
+            <span>Liberty</span>
+        </div>
+        <div class="nav-actions">
+            <a href="#carta" class="nav-link">Precios</a>
+            <a href="https://wa.me/56931488104?text=Hola!%20Me%20gustaría%20agendar%20una%20hora" target="_blank" class="nav-btn-sm">Agendar</a>
+        </div>
+    </nav>
+
+    <!-- 2. SECCIÓN HERO: SPLIT-SCREEN (Contenido Izquierda / Galería Derecha) -->
+    <section class="hero-split">
+        <div class="hero-content">
+            <div class="brand-badge">💈 Moda & Estilo 💈</div>
+            <h1 class="hero-title">Liberty<br><span>Barber Shop</span></h1>
+            <p class="hero-subtitle">Pasión • Disciplina • Excelencia</p>
+            
+            <div class="hero-cta-group">
+                <a href="https://wa.me/56931488104?text=Hola!%20Me%20gustaría%20agendar%20una%20hora" target="_blank" class="cta-btn primary-btn">
+                    <i class="fa-brands fa-whatsapp"></i> Agendar por WhatsApp
+                </a>
+                <a href="tel:+56931488104" class="cta-btn secondary-btn">
+                    <i class="fa-solid fa-phone"></i> Llamar
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-visual-grid">
+            <div class="visual-box main-img" data-tilt>
+                <img src="fotoexterna.jpeg" alt="Fachada Liberty">
+                <div class="visual-caption">La Fachada</div>
+            </div>
+            <div class="visual-box sub-img" data-tilt>
+                <img src="fotointerna.jpeg" alt="Interior Liberty">
+                <div class="visual-caption">El Estudio</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="container">
+
+        <!-- 3. SECCIÓN: SERVICIOS DESTACADOS (Tarjetas Horizontales o Grid Compacto) -->
+        <section class="section-wrapper">
+            <h2 class="section-title">Combos Exclusivos</h2>
+            <div class="combos-new-grid">
+                
+                <!-- Básico -->
+                <div class="combo-card-new" data-tilt>
+                    <div class="card-badge">Esencial</div>
+                    <div class="card-header-new">
+                        <h3>Servicio Básico</h3>
+                        <span class="price">$14.000</span>
+                    </div>
+                    <div class="combo-details">
+                        <ul class="combo-list">
+                            <li>Bebida de cortesía</li>
+                            <li>Lavado de cabello</li>
+                            <li>Corte de cabello</li>
+                            <li>Mascarilla puntos negros</li>
+                            <li>Aplicación de productos</li>
+                            <li>Depilación (oído y nariz)</li>
+                        </ul>
+                    </div>
+                    <button class="toggle-details-btn"><span>Ver detalles</span> <i class="fa-solid fa-chevron-down"></i></button>
+                </div>
+
+                <!-- Medio (Destacado) -->
+                <div class="combo-card-new featured-new" data-tilt>
+                    <div class="card-badge premium-badge">Recomendado</div>
+                    <div class="card-header-new">
+                        <h3>Servicio Medio</h3>
+                        <span class="price">$20.000</span>
+                    </div>
+                    <div class="combo-details">
+                        <ul class="combo-list">
+                            <li>Bebida de cortesía</li>
+                            <li>Lavado de cabello</li>
+                            <li>Corte de cabello</li>
+                            <li>Perfilación de cejas</li>
+                            <li>Perfilación de barba</li>
+                            <li>Mascarilla puntos negros</li>
+                            <li>Depilación (oídos y nariz)</li>
+                            <li>Aplicación de productos</li>
+                        </ul>
+                    </div>
+                    <button class="toggle-details-btn"><span>Ver detalles</span> <i class="fa-solid fa-chevron-down"></i></button>
+                </div>
+
+                <!-- Premium -->
+                <div class="combo-card-new" data-tilt>
+                    <div class="card-badge">V.I.P</div>
+                    <div class="card-header-new">
+                        <h3>Servicio Premium</h3>
+                        <span class="price">$25.000</span>
+                    </div>
+                    <div class="combo-details">
+                        <ul class="combo-list">
+                            <li>Bebida de cortesía</li>
+                            <li>Lavado de cabello</li>
+                            <li>Corte de cabello</li>
+                            <li>Perfilación de cejas</li>
+                            <li>Perfilación de barba</li>
+                            <li>Limpieza facial profunda</li>
+                            <li>Depilación (oídos y nariz)</li>
+                            <li>10 min. de masaje relajante</li>
+                            <li>Aplicación de productos</li>
+                        </ul>
+                    </div>
+                    <button class="toggle-details-btn"><span>Ver detalles</span> <i class="fa-solid fa-chevron-down"></i></button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. SECCIÓN CARTA DE PRECIOS (Diseño limpio a dos columnas) -->
+        <section id="carta" class="section-wrapper">
+            <h2 class="section-title">La Carta</h2>
+            
+            <div class="menu-dual-column">
+                <!-- Bloque 1: Cortes y Servicios -->
+                <div class="menu-block">
+                    <h3><i class="fa-solid fa-scissors gold-icon-small"></i> Servicios & Valores</h3>
+                    <div class="menu-list-new">
+                        <div class="menu-item-new">
+                            <span class="item-name">Corte de Cabello</span>
+                            <span class="item-price">$10.000</span>
+                        </div>
+                        <div class="menu-item-new">
+                            <span class="item-name">Perfilación de Barba</span>
+                            <span class="item-price">$7.000</span>
+                        </div>
+                        <div class="menu-item-new">
+                            <span class="item-name">Perfilación de Cejas</span>
+                            <span class="item-price">$2.000</span>
+                        </div>
+                        <div class="menu-item-new">
+                            <span class="item-name">Limpieza Facial</span>
+                            <span class="item-price">$10.000</span>
+                        </div>
+                        <div class="menu-item-new">
+                            <span class="item-name">Líneas Desde</span>
+                            <span class="item-price">$2.000</span>
+                        </div>
+                        <div class="menu-item-new">
+                            <span class="item-name">Lavado de Cabello</span>
+                            <span class="item-price">$2.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloque 2: Colorimetría -->
+                <div class="menu-block">
+                    <h3><i class="fa-solid fa-wand-magic-sparkles gold-icon-small"></i> Colorimetría <small class="eval-tag">(Previa Evaluación)</small></h3>
+                    <div class="menu-list-new">
+                        <div class="menu-item-new">
+                            <span class="item-name">Platinado Global + Corte</span>
+                            <span class="item-price">$100.000</span>
+                        </div>
+                        <div class="menu-item-new">
+                            <span class="item-name">Visos + Corte</span>
+                            <span class="item-price">$80.000</span>
+                        </div>
+                        <div class="menu-item-new">
+                            <span class="item-name">Colores Fantasías Desde</span>
+                            <span class="item-price">$40.000</span>
+                        </div>
+                        <div class="menu-item-new">
+                            <span class="item-name">Ondulaciones + Corte</span>
+                            <span class="item-price">$60.000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SECCIÓN QUICK INFO (Horarios y Ubicación en horizontal) -->
+        <section class="info-strip">
+            <div class="info-strip-item">
+                <i class="fa-regular fa-clock gold-icon"></i>
+                <div>
+                    <h4>Horario</h4>
+                    <p>Cierra a las 9:20 p. m. <span class="status-dot"></span></p>
+                </div>
+            </div>
+            <div class="info-strip-item">
+                <i class="fa-solid fa-location-dot gold-icon"></i>
+                <div>
+                    <h4>Ubicación</h4>
+                    <p>Av. San Carlos 1526, Puente Alto</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/56931488104?text=Hola!%20Me%20gustaría%20agendar%20una%20hora" target="_blank" class="wsp-float" title="Escríbenos por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- FOOTER PREMIUM -->
+    <footer class="luxury-footer">
+        <div class="footer-content">
+            <img src="logo2.jpeg" alt="Logo Liberty" class="footer-logo-img">
+            <p class="footer-rights">&copy; 2026 Liberty Barber Shop. Todos los derechos reservados.</p>
+            <p class="dev-credits">Diseño exclusivo por Nivvux</p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

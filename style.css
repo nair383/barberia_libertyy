@@ -1,0 +1,800 @@
+/* ==========================================================================
+   VARIABLES DE DISEÑO PREMIUM (LUJO & SOFISTICACIÓN CHILE 2026)
+   ========================================================================== */
+:root {
+    --color-bg-dark: #0b0b0d;       
+    --color-bg-card: #131317;       
+    --color-bg-nav: rgba(11, 11, 13, 0.85);
+    --color-gold: #c5a880;          
+    --color-gold-hover: #e5d5be;    
+    --color-gold-glow: rgba(197, 168, 128, 0.12);
+    --color-text-white: #f5f5f7;    
+    --color-text-muted: #9e9ea7;    
+    --color-wsp: #25d366;           
+    --color-wsp-dark: #128c7e;
+    --font-display: 'Cinzel', serif;
+    --font-sans: 'Poppins', sans-serif;
+    --border-glow: 1px solid rgba(197, 168, 128, 0.1); 
+    --transition-premium: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); 
+    --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   RESET Y ESTILOS BASE
+   ========================================================================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-white);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 80% 10%, rgba(197, 168, 128, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(20, 20, 25, 0.6) 0%, transparent 60%);
+    z-index: -2;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Fondo de partículas */
+.luxury-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(197, 168, 128, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: floatParticle 15s infinite linear;
+}
+
+@keyframes floatParticle {
+    0% { transform: translateY(105vh) scale(0.6); opacity: 0; }
+    50% { opacity: 0.6; }
+    100% { transform: translateY(-10vh) scale(1.3); opacity: 0; }
+}
+
+/* ==========================================================================
+   1. NAVBAR REFINADA (STICKY)
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background: var(--color-bg-nav);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 1000;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-logo-img {
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--color-gold);
+    object-fit: cover;
+}
+
+.nav-logo span {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--color-text-white);
+    text-transform: uppercase;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-link {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: var(--transition-premium);
+}
+
+.nav-link:hover {
+    color: var(--color-gold);
+}
+
+.nav-btn-sm {
+    background: transparent;
+    color: var(--color-gold);
+    border: 1px solid var(--color-gold);
+    padding: 10px 22px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: var(--transition-premium);
+}
+
+.nav-btn-sm:hover {
+    background: var(--color-gold);
+    color: var(--color-bg-dark);
+    box-shadow: 0 0 15px rgba(197, 168, 128, 0.3);
+}
+
+/* ==========================================================================
+   2. HERO SPLIT-SCREEN (DISTRIBUCIÓN ASIMÉTRICA)
+   ========================================================================== */
+.hero-split {
+    min-height: 90vh;
+    padding: 120px 40px 60px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.brand-badge {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--color-gold);
+    padding-bottom: 4px;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: 3.8rem;
+    line-height: 1.1;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.hero-title span {
+    color: var(--color-gold);
+    font-size: 3.4rem;
+    display: block;
+    font-weight: 500;
+}
+
+.hero-subtitle {
+    font-family: var(--font-sans);
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.hero-cta-group {
+    display: flex;
+    gap: 20px;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 18px 32px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: var(--transition-premium);
+}
+
+.primary-btn {
+    background: var(--color-wsp-dark);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(18, 140, 126, 0.2);
+}
+
+.primary-btn:hover {
+    background: #075e54;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(18, 140, 126, 0.35);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--color-gold);
+    border: 1px solid rgba(197, 168, 128, 0.4);
+}
+
+.secondary-btn:hover {
+    background: rgba(197, 168, 128, 0.05);
+    border-color: var(--color-gold);
+    color: var(--color-text-white);
+    transform: translateY(-3px);
+}
+
+/* Mosaico Visual Derecho */
+.hero-visual-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    height: 550px;
+    position: relative;
+}
+
+.visual-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: var(--shadow-premium);
+    transition: transform 0.1s ease;
+}
+
+.visual-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s var(--transition-premium);
+}
+
+.visual-box:hover img {
+    transform: scale(1.06);
+}
+
+.visual-box::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border: 1px solid rgba(197, 168, 128, 0.2);
+    border-radius: 8px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.main-img {
+    grid-column: 1 / 9;
+    grid-row: 1 / 11;
+    border: 2px solid rgba(197, 168, 128, 0.25);
+    z-index: 2;
+}
+
+.sub-img {
+    grid-column: 6 / 13;
+    grid-row: 4 / 13;
+    border: 1px solid rgba(197, 168, 128, 0.15);
+    z-index: 3;
+}
+
+.visual-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+    color: var(--color-gold);
+    font-family: var(--font-display);
+    padding: 30px 24px 16px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    z-index: 4;
+}
+
+/* ==========================================================================
+   COMPONENTES COMUNES (TÍTULOS Y CONTENEDORES)
+   ========================================================================== */
+.section-wrapper {
+    padding: 80px 0 40px;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    color: var(--color-gold);
+    text-align: center;
+    font-size: 2.4rem;
+    letter-spacing: 5px;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: var(--color-gold);
+    margin: 18px auto 0;
+    opacity: 0.5;
+}
+
+/* ==========================================================================
+   3. SECCIÓN: COMBOS EXCLUSIVOS (NUEVO GRID)
+   ========================================================================== */
+.combos-new-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    perspective: 1000px;
+}
+
+.combo-card-new {
+    background: linear-gradient(145deg, #16161a 0%, #0f0f12 100%);
+    border: var(--border-glow);
+    border-radius: 16px;
+    padding: 45px 35px 35px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.1s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+.combo-card-new.featured-new {
+    border: 1px solid rgba(197, 168, 128, 0.35);
+    background: linear-gradient(145deg, #1c1c22 0%, #0f0f12 100%);
+    box-shadow: 0 15px 40px rgba(197, 168, 128, 0.04);
+}
+
+.card-badge {
+    position: absolute;
+    top: -12px;
+    left: 35px;
+    background: #1c1c22;
+    border: 1px solid rgba(197, 168, 128, 0.3);
+    color: var(--color-text-muted);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 4px 14px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.premium-badge {
+    background: linear-gradient(90deg, #c5a880, #e5d5be);
+    color: var(--color-bg-dark);
+    font-weight: 700;
+    border: none;
+    box-shadow: 0 4px 12px rgba(197, 168, 128, 0.2);
+}
+
+.card-header-new {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+.card-header-new h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.card-header-new .price {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--color-gold);
+    font-weight: 700;
+}
+
+.combo-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+.combo-card-new.active .combo-details {
+    max-height: 500px;
+    opacity: 1;
+    margin-bottom: 20px;
+}
+
+.combo-list {
+    list-style: none;
+}
+
+.combo-list li {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 12px;
+    padding-left: 22px;
+    position: relative;
+}
+
+.combo-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--color-gold);
+    font-size: 0.8rem;
+}
+
+.toggle-details-btn {
+    background: transparent;
+    border: none;
+    color: var(--color-gold);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+    padding: 8px 0;
+    width: 100%;
+    transition: var(--transition-premium);
+}
+
+.toggle-details-btn:hover {
+    color: var(--color-text-white);
+}
+
+.toggle-details-btn i {
+    transition: transform 0.4s ease;
+    font-size: 0.7rem;
+}
+
+.combo-card-new.active .toggle-details-btn i {
+    transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   4. SECCIÓN CARTA DE PRECIOS (DISEÑO ABIERTO Y MODERNO)
+   ========================================================================== */
+.menu-dual-column {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    background: linear-gradient(145deg, #131317 0%, #0b0b0d 100%);
+    border: var(--border-glow);
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: var(--shadow-premium);
+}
+
+@media (min-width: 992px) {
+    .menu-dual-column {
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+    }
+}
+
+.menu-block h3 {
+    font-family: var(--font-display);
+    color: var(--color-text-white);
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.gold-icon-small {
+    color: var(--color-gold);
+    margin-right: 12px;
+    font-size: 1.1rem;
+}
+
+.eval-tag {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    text-transform: none;
+    margin-left: 10px;
+    font-weight: 400;
+}
+
+.menu-list-new {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.menu-item-new {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    position: relative;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+    transition: var(--transition-premium);
+}
+
+.menu-item-new:hover {
+    border-bottom-color: rgba(197, 168, 128, 0.3);
+}
+
+.menu-item-new .item-name {
+    font-size: 0.95rem;
+    color: var(--color-text-white);
+    letter-spacing: 0.5px;
+}
+
+.menu-item-new .item-price {
+    font-family: var(--font-display);
+    color: var(--color-gold);
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   5. SECCIÓN INFO STRIP (HORARIOS Y UBICACIÓN HORIZONTAL)
+   ========================================================================== */
+.info-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin: 60px 0 100px;
+}
+
+.info-strip-item {
+    background: var(--color-bg-card);
+    border: var(--border-glow);
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.info-strip-item .gold-icon {
+    font-size: 1.8rem;
+    color: var(--color-gold);
+    background: var(--color-gold-glow);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.info-strip-item h4 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.info-strip-item p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #2ecc71;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px #2ecc71;
+}
+
+/* ==========================================================================
+   BOTÓN INTERACTIVO DE WHATSAPP FLOTANTE
+   ========================================================================== */
+.wsp-float {
+    position: fixed;
+    width: 56px;
+    height: 56px;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--color-wsp-dark);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    z-index: 999;
+    text-decoration: none;
+    transition: var(--transition-premium);
+}
+
+.wsp-float:hover {
+    transform: scale(1.1) rotate(8deg);
+    background-color: #075e54;
+}
+
+/* ==========================================================================
+   FOOTER PREMIUM
+   ========================================================================== */
+.luxury-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    background: #070708;
+    padding: 60px 20px 40px;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-logo-img {
+    max-width: 90px;
+    height: auto;
+    margin-bottom: 25px;
+    filter: grayscale(1) opacity(0.25);
+    transition: var(--transition-premium);
+}
+
+.luxury-footer:hover .footer-logo-img {
+    filter: grayscale(0) opacity(0.65) drop-shadow(0 0 8px rgba(197, 168, 128, 0.2));
+}
+
+.footer-rights {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.dev-credits {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.15);
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   CLASES DE SOPORTE EFECTO SCROLL REVEAL
+   ========================================================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   RESPONSIVIDAD Y MEDIA QUERIES (BREAKPOINTS CRÍTICOS)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .hero-split {
+        padding: 110px 24px 40px;
+        gap: 40px;
+    }
+    .hero-title { font-size: 3rem; }
+    .hero-title span { font-size: 2.6rem; }
+}
+
+@media (max-width: 900px) {
+    .hero-split {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 110px;
+        min-height: auto;
+    }
+    .hero-content {
+        max-width: 100%;
+    }
+    .hero-cta-group {
+        justify-content: center;
+    }
+    .hero-visual-grid {
+        width: 100%;
+        max-width: 550px;
+        height: 450px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 0 20px;
+    }
+    .nav-link {
+        display: none; /* Simplifica UI móvil */
+    }
+    .hero-split {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .hero-title { font-size: 2.3rem; }
+    .hero-title span { font-size: 2rem; }
+    .hero-cta-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .cta-btn {
+        width: 100%;
+    }
+    .hero-visual-grid {
+        height: 350px;
+    }
+    .menu-dual-column {
+        padding: 30px 20px;
+    }
+    .menu-block h3 {
+        margin-bottom: 25px;
+    }
+    .info-strip {
+        margin-bottom: 60px;
+    }
+    .wsp-float {
+        bottom: 20px;
+        right: 20px;
+    }
+}
