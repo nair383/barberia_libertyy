@@ -141,3 +141,25 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // 7. INTERACTIVIDAD DE TARJETAS DE BARBEROS DESPLEGABLES
+    const barberCards = document.querySelectorAll(".barber-card-collapsible");
+
+    barberCards.forEach(card => {
+        // Permitimos el toggle tanto haciendo clic en la tarjeta entera como en su botón
+        card.addEventListener("click", (e) => {
+            // Si hacen clic directo en el enlace de reservar (WhatsApp), no cerramos la tarjeta
+            if (e.target.closest(".barber-wsp-btn")) return;
+
+            const button = card.querySelector(".barber-toggle-btn");
+            const btnText = button.querySelector("span");
+
+            card.classList.toggle("active");
+
+            if (card.classList.contains("active")) {
+                btnText.textContent = "Ocultar";
+            } else {
+                btnText.textContent = "Ver más";
+            }
+        });
+    });
