@@ -8,8 +8,9 @@
    5. COMPONENTES COMUNES (Títulos, Botón Flotante y Footer)
    6. ESTILOS EXCLUSIVOS DE LA PÁGINA: INDEX (Hero Split, Combos, Precios)
    7. ESTILOS EXCLUSIVOS DE LA PÁGINA: QUIÉNES SOMOS (Nosotros)
-   8. EFECTOS DE ANIMACIÓN Y SOPORTE (Scroll Reveal, Partículas)
-   9. RESPONSIVIDAD Y MEDIA QUERIES (Breakpoints Críticos)
+   8. ESTILOS EXCLUSIVOS DE LA PÁGINA: SERVICIOS (Combos, Carta, Barberos)  <-- ¡NUEVO!
+   9. EFECTOS DE ANIMACIÓN Y SOPORTE (Scroll Reveal, Partículas)
+   10. RESPONSIVIDAD Y MEDIA QUERIES (Breakpoints Críticos)
    ========================================================================== */
 
 /* ==========================================================================
@@ -365,20 +366,31 @@ img, video, iframe {
    6. ESTILOS EXCLUSIVOS DE LA PÁGINA: INDEX
    ========================================================================== */
 
-/* Hero Split-Screen (Pantalla Dividida) */
 .hero-split {
     min-height: 90vh;
     padding: 120px 40px 60px;
     display: flex;
-    align-items: center;
-    gap: 60px;
+    flex-direction: column; /* Cambiado de row (por defecto) a column para apilarlo */
+    align-items: center;    /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    text-align: center;     /* Centra los textos */
+    gap: 40px;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 .hero-content {
-    flex: 1;
+    flex: none; /* Quitamos el flex: 1 para evitar que se estire de forma asimétrica */
+    width: 100%;
     max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Asegura que la insignia, el título y la tabla se centren */
+}
+
+/* Centramos el contenedor de horarios en escritorio */
+.hero-schedule-box {
+    margin: 25px auto 0 auto; 
 }
 
 .brand-badge {
@@ -811,8 +823,8 @@ img, video, iframe {
    7. ESTILOS EXCLUSIVOS DE LA PÁGINA: QUIÉNES SOMOS (quienes-somos.html)
    ========================================================================== */
 
-/* Encabezado General de la página de Nosotros */
-.about-page .page-header {
+/* Encabezado General de la página de Nosotros y Servicios */
+.about-page .page-header, .services-page .page-header {
     text-align: center;
     padding: 140px 0 40px;
 }
@@ -955,7 +967,137 @@ img, video, iframe {
 }
 
 /* ==========================================================================
-   8. EFECTOS DE ANIMACIÓN Y SOPORTE
+   8. ESTILOS EXCLUSIVOS DE LA PÁGINA: SERVICIOS (servicios.html) <-- ¡NUEVO!
+   ========================================================================== */
+
+/* Grid de Barberos */
+.barbers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    perspective: 1000px;
+}
+
+/* Tarjeta del Barbero */
+.barber-card {
+    background: linear-gradient(145deg, #16161a 0%, #0f0f12 100%);
+    border: var(--border-glow);
+    border-radius: 16px;
+    padding: 35px 25px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.1s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+.barber-card:hover {
+    box-shadow: 0 15px 35px rgba(197, 168, 128, 0.08);
+}
+
+.barber-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--color-gold-glow);
+    border: 1px solid rgba(197, 168, 128, 0.3);
+    color: var(--color-gold);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+/* Contenedor Circular para Imagen/Logo de barberos */
+.barber-img-container {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 2px solid var(--color-gold);
+    padding: 5px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-bg-dark);
+}
+
+.barber-logo-img-card {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.6s var(--transition-premium);
+}
+
+.barber-card:hover .barber-logo-img-card {
+    transform: rotate(10deg) scale(1.05);
+}
+
+/* Información del Barbero */
+.barber-info {
+    margin-bottom: 25px;
+}
+
+.barber-name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    color: var(--color-text-white);
+    margin-bottom: 8px;
+}
+
+.barber-specialty {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.5px;
+}
+
+/* Acción de Reserva */
+.barber-action {
+    width: 100%;
+}
+
+.barber-wsp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    color: var(--color-gold);
+    border: 1px solid rgba(197, 168, 128, 0.4);
+    border-radius: 6px;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: var(--transition-premium);
+}
+
+.barber-wsp-btn:hover {
+    background: var(--color-gold);
+    color: var(--color-bg-dark);
+    border-color: var(--color-gold);
+    box-shadow: 0 5px 15px rgba(197, 168, 128, 0.25);
+}
+
+/* Estilos Adicionales Específicos para Servicios (Combos en servicios.html) */
+.services-page .combos-new-grid {
+    margin-top: 40px;
+}
+
+/* ==========================================================================
+   9. EFECTOS DE ANIMACIÓN Y SOPORTE
    ========================================================================== */
 
 /* Fondo de partículas */
@@ -996,7 +1138,7 @@ img, video, iframe {
 }
 
 /* ==========================================================================
-   9. RESPONSIVIDAD Y MEDIA QUERIES (BREAKPOINTS CRÍTICOS)
+   10. RESPONSIVIDAD Y MEDIA QUERIES (BREAKPOINTS CRÍTICOS)
    ========================================================================== */
 @media (max-width: 1024px) {
     .hero-split {
@@ -1027,7 +1169,7 @@ img, video, iframe {
         margin-top: 20px;
     }
     /* Desactiva efectos 3D Tilt táctiles en dispositivos móviles por UX */
-    .visual-box, .combo-card-new, .story-visual, .value-card {
+    .visual-box, .combo-card-new, .story-visual, .value-card, .barber-card {
         transform: none !important;
         transition: none !important;
     }
@@ -1087,12 +1229,16 @@ img, video, iframe {
         flex-shrink: 0;
     }
     
-    /* Layout simplificado de Quiénes Somos en móvil */
+    /* Layout simplificado en móvil */
     .content-title-cta {
         font-size: 1.6rem;
     }
     .final-cta {
         padding: 40px 20px;
+    }
+    .barbers-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
@@ -1110,5 +1256,206 @@ img, video, iframe {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
+    }
+}
+
+/* ==========================================================================
+   ESTILOS ADICIONALES: TARJETAS DE BARBEROS DESPLEGABLES
+   ========================================================================== */
+.barber-card-collapsible {
+    background: linear-gradient(145deg, #16161a 0%, #0f0f12 100%);
+    border: var(--border-glow);
+    border-radius: 16px;
+    padding: 35px 25px 20px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.1s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.barber-card-collapsible:hover {
+    box-shadow: 0 15px 35px rgba(197, 168, 128, 0.08);
+}
+
+/* Contenedor colapsable del botón de reserva */
+.barber-extra-content {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+}
+
+/* Estado activo tras el click */
+.barber-card-collapsible.active .barber-extra-content {
+    max-height: 100px;
+    opacity: 1;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* Botón personalizado de control/despliegue */
+.barber-toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--color-gold);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+    padding: 8px 0;
+    width: 100%;
+    transition: var(--transition-premium);
+}
+
+.barber-toggle-btn:hover {
+    color: var(--color-text-white);
+}
+
+.barber-toggle-btn i {
+    transition: transform 0.4s ease;
+    font-size: 0.7rem;
+}
+
+.barber-card-collapsible.active .barber-toggle-btn i {
+    transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   ESTILOS PERSONALIZADOS: SECCIÓN HISTORIA (FUNDADOR)
+   ========================================================================== */
+
+/* Subtítulo destacado del Fundador */
+.story-subtitle {
+    font-family: var(--font-display); /* Fuente Cinzel */
+    color: var(--color-gold);
+    font-size: 1.35rem; /* Más pequeño que el H2 (2rem) pero mayor que el párrafo */
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: -10px;
+    margin-bottom: 25px;
+    text-shadow: 0px 0px 8px rgba(197, 168, 128, 0.2);
+    display: inline-block;
+    border-bottom: 1px solid rgba(197, 168, 128, 0.3);
+    padding-bottom: 6px;
+}
+
+/* Párrafo Justificado y Centrado Visualmente */
+.story-paragraph-justify {
+    color: var(--color-text-muted);
+    font-size: 0.98rem;
+    line-height: 1.8;
+    text-align: justify; /* Justifica el texto */
+    text-justify: inter-word;
+    max-width: 90%; /* Margen interno para que no ocupe todo el ancho */
+    margin: 0 auto 20px auto; /* Centra el bloque del párrafo */
+}
+
+/* Resalte de la firma al final del párrafo */
+.story-paragraph-justify strong {
+    color: var(--color-text-white);
+    font-family: var(--font-display);
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.story-paragraph-justify span {
+    color: var(--color-gold);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   NUEVO RECUADRO DE HORARIOS (HERO)
+   ========================================================================== */
+.hero-schedule-box {
+    background: rgba(10, 10, 10, 0.75); /* Fondo oscuro con transparencia premium */
+    border: 1px solid var(--color-gold); /* Borde dorado sutil */
+    border-radius: 8px;
+    padding: 20px 25px;
+    max-width: 420px;
+    margin: 25px 0 0 0; /* Ajusta el margen según la alineación de tu Hero */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px); /* Efecto esmerilado en navegadores modernos */
+    animation: fadeIn 1s ease-in-out;
+}
+
+.schedule-title {
+    font-family: var(--font-display); /* Cinzel */
+    color: var(--color-text-white);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+}
+
+.schedule-title i {
+    color: var(--color-gold);
+}
+
+.schedule-table {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.schedule-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+.schedule-days {
+    font-weight: 500;
+}
+
+.schedule-hours {
+    font-family: var(--font-display); /* Usamos Cinzel para los números o mantenerlo limpio */
+    font-weight: 600;
+    color: var(--color-text-white);
+}
+
+/* Resalte especial para los domingos */
+.text-gold .schedule-days {
+    color: var(--color-gold);
+}
+.text-gold .schedule-hours {
+    color: var(--color-gold);
+    text-shadow: 0 0 8px rgba(197, 168, 128, 0.2);
+}
+
+/* Responsivo para celulares */
+@media (max-width: 768px) {
+    .hero-schedule-box {
+        margin: 25px auto 0 auto; /* Centrar en móviles si el hero se centra */
+        width: 100%;
+        max-width: 360px;
+        padding: 15px 20px;
+    }
+    
+    .schedule-row {
+        font-size: 0.85rem;
     }
 }
